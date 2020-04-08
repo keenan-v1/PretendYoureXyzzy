@@ -34,6 +34,30 @@
     </developer>
   </developers>
 
+  <profiles>
+    <profile>
+      <id>deploy</id>
+      <dependencies>
+        <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+          <version>3.0.1</version>
+          <scope>provided</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+    <profile>
+      <id>IDE</id>
+      <dependencies>
+        <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+          <version>3.0.1</version>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
+
   <build>
     <finalName>ZY</finalName>
     <plugins>
@@ -115,6 +139,8 @@
           <files>
             <file>build.properties</file>
           </files>
+          <outputFile/>
+          <properties/>
         </configuration>
       </plugin>
       <plugin>
@@ -172,6 +198,7 @@
           <!-- <jettyXml>${appserver.web-inf.dir}/jetty-jmx.xml</jettyXml> -->
           <webApp>
             <!--<defaultsDescriptor>${project.basedir}/jetty-defaults.xml</defaultsDescriptor> -->
+            <!--suppress UnresolvedMavenProperty -->
             <descriptor>${project.build.directory}/${project.build.artifact.name}/WEB-INF/web.xml</descriptor>
             <resourceBases>
               <!-- Non-filtered -->
@@ -188,26 +215,6 @@
           <webAppSourceDirectory>WebContent</webAppSourceDirectory>
           <stopPort>8081</stopPort>
           <stopKey>STOP</stopKey>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>buildnumber-maven-plugin</artifactId>
-        <version>1.4</version>
-        <executions>
-          <execution>
-            <phase>validate</phase>
-            <goals>
-              <goal>create</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <doCheck>true</doCheck>
-          <doUpdate>true</doUpdate>
-          <revisionOnScmFailure>0</revisionOnScmFailure>
-          <shortRevisionLength>7</shortRevisionLength>
         </configuration>
       </plugin>
     </plugins>
@@ -240,7 +247,7 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <execute></execute>
+                    <execute/>
                   </action>
                 </pluginExecution>
               </pluginExecutions>
@@ -293,12 +300,6 @@
       <version>1.1</version>
     </dependency>
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>3.0.1</version>
-      <!-- <scope>provided</scope> -->
-    </dependency>
-    <dependency>
       <groupId>org.xerial</groupId>
       <artifactId>sqlite-jdbc</artifactId>
       <version>3.8.7</version>
@@ -323,7 +324,7 @@
     <dependency>
       <groupId>postgresql</groupId>
       <artifactId>postgresql</artifactId>
-      <version>8.4-702.jdbc3</version>
+      <version>9.1-901-1.jdbc4</version>
     </dependency>
     <dependency>
       <groupId>org.easymock</groupId>
