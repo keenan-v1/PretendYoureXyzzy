@@ -318,7 +318,9 @@ boolean allowBlankCards = injector.getInstance(Key.get(new TypeLiteral<Boolean>(
 	    </div>
 	    <div class="logo_3 logo_element watermark_container">
         <br/>
-        <span class="watermark"></span>
+            <dfn class="watermark" title="test">
+                <span class="watermark"></span>
+            </dfn>
 	    </div>
 	    <div class="logo_text">Pretend You're Xyzzy</div>
 	  </div>

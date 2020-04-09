@@ -59,15 +59,6 @@ to, for instance, display the number of connected players.
   It is not tied in any way to your username, except possibly if a server error occurs. Gameplay
   results are logged permanently, but without information identifying you.
 </p>
-<p>Recent Changes:</p>
-<ul>
-  <li>3 September 2018:<ul>
-    <li>All chat and fill-in-the-blank cards have been disabled. If you're still out of the loop,
-    <a href="https://gist.githubusercontent.com/ajanata/07ededdb584f7bb77a8c7191d3a4bbcc/raw/e76faacc19c2bb598a1a8fd94b9ebcb29c5502e0">
-    here's why.</a></li>
-  </ul></li>
-  <li><a href="changelog.html">Older entries.</a></li>
-</ul>
 <p>Known issues:</p>
 <ul>
   <li><strong>Do not open the game more than once in the same browser.</strong> Neither instance

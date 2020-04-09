@@ -169,6 +169,7 @@ cah.card.BaseCard.prototype.getAriaText = function() {
 cah.card.BaseCard.prototype.setWatermark = function(watermark) {
   this.ensureFaceUpElement_();
   $(".watermark", this.faceUpElem_).text(watermark);
+  $(".watermark", this.faceUpElem_).attr('title', watermark);
 };
 
 /**
